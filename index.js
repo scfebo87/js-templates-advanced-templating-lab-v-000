@@ -30,10 +30,10 @@ function updateRecipe() {
 function displayEditForm() { 
   let name = document.getElementById("nameHead").innerText;
   let description = document.getElementById("recipeDescription").innerText; 
-  let ingredientNodes = document.getElementsByName("ingredientsList"); 
+  let ingredientsNodes = document.getElementsByName("ingredientsList"); 
   let ingredients = [];
-  for(let i =0; i<ingredientNodes.length; i++) {
-    ingredients.push(ingredientNodes[i].innerText);
+  for(let i =0; i<ingredientsNodes.length; i++) {
+    ingredients.push(ingredientsNodes[i].innerText);
   }
   let recipe = {name, description, ingredients, submitAction: 'createRecipe()'};
   let recipeFormTemplate = document.getElementById("recipe-form-template").innerHTML;
@@ -43,7 +43,7 @@ function displayEditForm() {
   
 function recipeValues() {
   let ingredientsNodes = document.getElementsByName("ingredients");
-  var ingredients = [];
+  let ingredients = [];
   for(let i=0;i<ingredientsNodes.length;i++) {
     if(ingredientsNodes[i].value !== "") {
       ingredients.push(ingredientsNodes[i].value);
